@@ -40,7 +40,8 @@ export default function Home() {
               </p>
               {/* <button className="btn" onClick={)}>
                         </button> */}
-              <button className="text-left text-sm mt-8 w-20 pl-3 pb-2 rounded-2xl p-2 border-2 border-[#00C1D4]">
+              <button className="text-left tracking-wider text-sm mt-8 w-20 pl-3 pb-2 rounded-3xl p-2 border-2 border-[#00C1D4]
+               hover:bg-[#00C1D4] hover:shadow-2xl hover:text-gray-900 hover:border-gray-900">
                 Contact
               </button>
             </div>

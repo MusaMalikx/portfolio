@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(../assets//BillionDreams.ttf) format('tff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 html,
 body {
   padding: 0;
@@ -6,6 +13,13 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  body{
+    @apply scrollbar-hide
+  }
+}

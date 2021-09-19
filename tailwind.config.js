@@ -5,12 +5,15 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero': "url('/assets/mr.jpg')",
-       }
+        hero: "url('/assets/mr.jpg')",
+      },
+      fontFamily: {
+        sans: ["Roboto", "Helvetica", "Arial", "sans-serif", "Grechen Fuemen"],
+      },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
