@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { change, selectHamburger } from '../redux/slices/hamburger';
 import Logo from './Logo';
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
 
@@ -14,6 +15,7 @@ const Navbar = () => {
     // const contact = useSelector(selectContact);
     const click = useSelector(selectHamburger);
     const dispatch = useDispatch();
+    const router = useRouter();
 
     return (
         <>
@@ -26,14 +28,14 @@ const Navbar = () => {
                     >
                         <div className="flex flex-row my-0 mx-1">
                             <Logo />
-                            <h3 className=" text-2xl font-bold tracking-widest">Musa Malik</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold tracking-widest">Musa Malik</h3>
                         </div>
                         <div className="flex justify-evenly md:justify-end items-center my-auto mx-0">
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4'>
+                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4' onClick={ () => router.push('/')}>
                                 <Home />
                                 <p className=' ml-1 text-sm ' >About Me</p>
                             </div>
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4'>
+                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4' onClick={ () => router.push('/resume')}>
                                 <Album />
                                 <p className='ml-1 text-sm ' >Resume</p>
                             </div>
@@ -64,11 +66,11 @@ const Navbar = () => {
                                     data-aos-duration="500"
                                 >
                                     <div className='flex flex-col items-center text-xl'>
-                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
+                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={ () => router.push('/')}>
                                             <Home />
                                             <a className='ml-2' href="#home" >ABOUT ME</a>
                                         </div>
-                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
+                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={ () => router.push('/resume')}>
                                             <Album />
                                             <a className='ml-2' href="#home" >RESUME</a>
                                         </div>

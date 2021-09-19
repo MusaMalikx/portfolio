@@ -20,6 +20,6 @@ body {
 
 @layer components{
   body{
-    @apply scrollbar-hide
+    @apply scrollbar-hide bg-[#0A1931] text-white
   }
 }
