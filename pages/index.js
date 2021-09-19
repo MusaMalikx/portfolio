@@ -27,10 +27,14 @@ export default function Home() {
       <div id="home" className="bg-[#0A1931] text-white">
         <Navbar />
         <div className="home">
-          <div className="overview pt-36 grid md:grid-cols-2 gap-4" 
-          // data-aos="zoom-out"
-          // data-aos-offset="300"
-          // data-aos-easing="ease-in-sine"
+          <div
+            className="overview pt-36 grid md:grid-cols-2 gap-4"
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+            // data-aos="zoom-out"
+            // data-aos-offset="300"
+            // data-aos-easing="ease-in-sine"
           >
             <div
               className="flex justify-evenly md:justify-end cursor-pointer"
