@@ -3,7 +3,7 @@ import { Apps, Brush, ImportantDevices, Storefront } from '@material-ui/icons';
 const Do = () => {
     return (
         <div className="what grid md:grid-cols-2 justify-evenly my-5 mx-0">
-            <div className="show flex py-5">
+            <div className="show flex py-5" data-aos="zoom-in-up">
                 <div className="icon text-[#00C1D4]">
                     <Brush />
                 </div>
@@ -15,7 +15,7 @@ const Do = () => {
                     </p>
                 </div>
             </div>
-            <div className="show flex py-5">
+            <div className="show flex py-5" data-aos="zoom-in-up">
                 <div className="icon text-[#00C1D4]">
                     <ImportantDevices />
                 </div>
@@ -27,7 +27,7 @@ const Do = () => {
                     </p>
                 </div>
             </div>
-            <div className="show flex py-5">
+            <div className="show flex py-5" data-aos="zoom-in-up">
                 <div className="icon  text-[#00C1D4]">
                     <Storefront />
                 </div>
@@ -41,7 +41,7 @@ const Do = () => {
                     </p>
                 </div>
             </div>
-            <div className="show flex py-5">
+            <div className="show flex py-5" data-aos="zoom-in-up">
                 <div className="icon text-[#00C1D4]">
                     <Apps />
                 </div>

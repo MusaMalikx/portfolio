@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Do from "../components/Do";
 import Footer from "../components/Footer";
@@ -8,10 +9,13 @@ import Offer from "../components/Offer";
 import Pic from "../components/Pic";
 import { selectHamburger } from "../redux/slices/hamburger";
 import styles from "../styles/Home.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
-  const bool = useSelector(selectHamburger);
-  console.log(bool);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <>
@@ -24,10 +28,20 @@ export default function Home() {
         <Navbar />
         <div className="home">
           <div className="overview pt-36 grid md:grid-cols-2 gap-4">
-            <div className="flex justify-evenly md:justify-end cursor-pointer">
+            <div
+              className="flex justify-evenly md:justify-end cursor-pointer"
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
               <Pic />
             </div>
-            <div className="flex md:justify-start items-center md:items-start flex-col text-left px-10">
+            <div
+              className="flex md:justify-start items-center md:items-start flex-col text-left px-10"
+              data-aos="fade-left"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
               <p className="my-3 text-sm text-gray-400">React-developer</p>
               <h1 className="my-3 text-xl tracking-widest">Musa Malik</h1>
               <p className="my-5 text-sm text-gray-300">
@@ -40,24 +54,32 @@ export default function Home() {
               </p>
               {/* <button className="btn" onClick={)}>
                         </button> */}
-              <button className="text-left tracking-wider text-sm mt-8 w-20 pl-3 pb-2 rounded-3xl p-2 border-2 border-[#00C1D4]
-               hover:bg-[#00C1D4] hover:shadow-2xl hover:text-gray-900 hover:border-gray-900">
+              <button
+                className="text-left tracking-wider text-sm mt-8 w-20 pl-3 pb-2 rounded-3xl p-2 border-2 border-[#00C1D4]
+               hover:bg-[#00C1D4] hover:shadow-2xl hover:text-gray-900 hover:border-gray-900"
+              >
                 Contact
               </button>
             </div>
           </div>
           <div className="what-i-do m-10">
-            <h3 className="hr text-2xl font-semibold tracking-wider">
+            <h3
+              className="hr text-2xl font-semibold tracking-wider"
+              data-aos="fade-right"
+            >
               What I Do
+              <hr className="bg-[#00C1D4] w-10 mt-2 h-0.5 outline-none border-none rounded-full" />
             </h3>
-            <hr className="bg-[#00C1D4] w-10 mt-2 h-0.5 outline-none border-none rounded-full" />
             <Do />
           </div>
           <div className="what-i-offer m-10 mb-0">
-            <h3 className="hr text-2xl font-semibold tracking-wider">
+            <h3
+              className="hr text-2xl font-semibold tracking-wider"
+              data-aos="fade-right"
+            >
               What I Offer
+              <hr className="bg-[#00C1D4] w-10 mt-2 h-0.5 outline-none border-none rounded-full" />
             </h3>
-            <hr className="bg-[#00C1D4] w-10 mt-2 h-0.5 outline-none border-none rounded-full" />
             <Offer />
           </div>
         </div>

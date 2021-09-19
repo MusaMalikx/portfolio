@@ -19,7 +19,11 @@ const Navbar = () => {
         <>
             <div className={`text-white ${click ? 'bg-black' : 'bg-gray-800'}  flex content-center fixed top-0 left-0 right-0 z-10`}>
                 <div className='navbar flex flex-col w-full'>
-                    <div className='flex justify-between content-center my-8 px-10'>
+                    <div className='flex justify-between content-center my-8 px-10'
+                        data-aos="fade-down"
+                        data-aos-easing="linear"
+                        data-aos-duration="400"
+                    >
                         <div className="flex flex-row my-0 mx-1">
                             <Logo />
                             <h3 className=" text-2xl font-bold tracking-widest">Musa Malik</h3>
@@ -55,8 +59,8 @@ const Navbar = () => {
                     {
                         click && (
                             <>
-                                < div className='fixed top-24 p-10 overscroll-y-scroll right-0 bg-black h-screen z-20 justify-between text-center border-l-2 border-[#00C1D4]'
-                                    data-aos="fade-down"
+                                < div className='fixed top-24 p-10 right-0 bg-black h-screen z-20 justify-between text-center border-l-2 border-[#00C1D4]'
+                                    data-aos="fade-left"
                                     data-aos-easing="linear"
                                     data-aos-duration="500"
                                 >
