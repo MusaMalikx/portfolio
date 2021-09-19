@@ -61,7 +61,6 @@ const Navbar = () => {
                             <>
                                 < div className='fixed top-24 p-10 right-0 bg-black h-screen z-20 justify-between text-center border-l-2 border-[#00C1D4]'
                                     data-aos="fade-left"
-                                    data-aos-easing="linear"
                                     data-aos-duration="500"
                                 >
                                     <div className='flex flex-col items-center text-xl'>
