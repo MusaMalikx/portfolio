@@ -27,20 +27,25 @@ export default function Home() {
       <div id="home" className="bg-[#0A1931] text-white">
         <Navbar />
         <div className="home">
-          <div className="overview pt-36 grid md:grid-cols-2 gap-4">
+          <div className="overview pt-36 grid md:grid-cols-2 gap-4" 
+          data-aos="zoom-out"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          >
             <div
               className="flex justify-evenly md:justify-end cursor-pointer"
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
+              // data-aos="fade-right"
+              // data-aos-offset="300"
+              // data-aos-easing="ease-in-sine"
             >
               <Pic />
             </div>
             <div
               className="flex md:justify-start items-center md:items-start flex-col text-left px-10"
-              data-aos="fade-left"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
+              //data-aos="fade-left"
+              //data-aos-offset="300"
+              //data-aos-easing="ease-in-sine"
+              //data-aos="fade-up-left"
             >
               <p className="my-3 text-sm text-gray-400">React-developer</p>
               <h1 className="my-3 text-xl tracking-widest">Musa Malik</h1>
