@@ -22,7 +22,7 @@ const Resume = () => {
     dispatch(setPortfolio(false));
     dispatch(setContact(false));
 
-    AOS.init();
+    //AOS.init();
   }, [dispatch]);
 
   return (

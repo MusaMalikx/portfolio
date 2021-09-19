@@ -31,7 +31,7 @@ export default function Home() {
     dispatch(setPortfolio(false));
     dispatch(setContact(false));
 
-    AOS.init();
+    //AOS.init();
   }, [dispatch]);
 
   return (
