@@ -19,7 +19,7 @@ const Progress = ({ name, value }) => {
     }))(LinearProgress);
 
     return (
-        <div className='progress mb-4 pr-5'>
+        <div className='progress mb-4 pr-5' data-aos="zoom-in-up">
             <div className="value flex justify-between mb-2">
                 <h6 className='v-h6 m-0 text-xs'>{name}</h6>
                 <p className='v-p m-0 text-xs'>{value + '%'}</p>

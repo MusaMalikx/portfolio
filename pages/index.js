@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Do from "../components/Do";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -11,11 +11,28 @@ import { selectHamburger } from "../redux/slices/hamburger";
 import styles from "../styles/Home.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  setAbout,
+  setContact,
+  setPortfolio,
+  setResume,
+} from "../redux/slices/navbar";
 
 export default function Home() {
+  // useEffect(() => {
+  //   AOS.init();
+  // }, []);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
+    dispatch(setAbout(true));
+    dispatch(setResume(false));
+    dispatch(setPortfolio(false));
+    dispatch(setContact(false));
+
     AOS.init();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

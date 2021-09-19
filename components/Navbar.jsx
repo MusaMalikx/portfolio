@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { change, selectHamburger } from '../redux/slices/hamburger';
 import Logo from './Logo';
 import { useRouter } from 'next/router'
+import { selectAbout, selectContact, selectPortfolio, selectResume } from '../redux/slices/navbar';
 
 const Navbar = () => {
 
@@ -16,6 +17,20 @@ const Navbar = () => {
     const click = useSelector(selectHamburger);
     const dispatch = useDispatch();
     const router = useRouter();
+    const about = useSelector(selectAbout);
+    const resume = useSelector(selectResume);
+    const portfolio = useSelector(selectPortfolio);
+    const contact = useSelector(selectContact);
+
+    const handleMe = () => {
+        router.push('/')
+        dispatch(change())
+    }
+
+    const handleResume = () => {
+        router.push('/resume')
+        dispatch(change())
+    }
 
     return (
         <>
@@ -31,19 +46,19 @@ const Navbar = () => {
                             <h3 className="text-2xl md:text-3xl font-bold tracking-widest">Musa Malik</h3>
                         </div>
                         <div className="flex justify-evenly md:justify-end items-center my-auto mx-0">
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4' onClick={ () => router.push('/')}>
+                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${about ? 'text-white' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/')}>
                                 <Home />
                                 <p className=' ml-1 text-sm ' >About Me</p>
                             </div>
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4' onClick={ () => router.push('/resume')}>
+                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${resume ? 'text-white' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/resume')}>
                                 <Album />
                                 <p className='ml-1 text-sm ' >Resume</p>
                             </div>
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4'>
+                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
                                 <MovieCreation />
                                 <p className='ml-1 text-sm ' >Portfolio</p>
                             </div>
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-400 cursor-pointer hover:animate-bounce mr-4'>
+                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
                                 <AlternateEmail />
                                 <p className='ml-1 text-sm ' >Contact</p>
                             </div>
@@ -65,12 +80,12 @@ const Navbar = () => {
                                     data-aos="fade-left"
                                     data-aos-duration="500"
                                 >
-                                    <div className='flex flex-col items-center text-xl'>
-                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={ () => router.push('/')}>
+                                    <div className='flex text-gray-500 flex-col items-center text-xl'>
+                                        <div className={`py-6 flex content-center ${about && 'text-white'} hover:scale-125 transition ease-in-out duration-300`} onClick={handleMe}>
                                             <Home />
                                             <a className='ml-2' href="#home" >ABOUT ME</a>
                                         </div>
-                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={ () => router.push('/resume')}>
+                                        <div className={`py-6 flex content-center ${resume && 'text-white'} hover:scale-125 transition ease-in-out duration-300`} onClick={handleResume}>
                                             <Album />
                                             <a className='ml-2' href="#home" >RESUME</a>
                                         </div>
