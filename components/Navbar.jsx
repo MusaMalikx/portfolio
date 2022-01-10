@@ -7,6 +7,8 @@ import { change, selectHamburger } from '../redux/slices/hamburger';
 import Logo from './Logo';
 import { useRouter } from 'next/router'
 import { selectAbout, selectContact, selectPortfolio, selectResume } from '../redux/slices/navbar';
+import malik from "../assets/m.png";
+import Image from "next/image";
 
 const Navbar = () => {
 
@@ -34,7 +36,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className={`text-white ${click ? 'bg-black' : 'bg-gray-800'}  flex content-center fixed top-0 left-0 right-0 z-10`}>
+            <div className={`text-white ${click ? 'bg-black' : 'bg-[#F7F6F2]'}  flex content-center fixed top-0 left-0 right-0 z-10`}>
                 <div className='navbar flex flex-col w-full'>
                     <div className='flex justify-between content-center my-8 px-10'
                         data-aos="fade-down"
@@ -43,14 +45,15 @@ const Navbar = () => {
                     >
                         <div className="flex flex-row my-0 mx-1">
                             <Logo />
-                            <h3 className="text-2xl md:text-3xl font-bold tracking-widest">Musa Malik</h3>
+                            <h3 className={`text-2xl ${click ? 'text-white' : 'text-black'} md:text-3xl font-serif font-bold tracking-widest`}>Musa Malik</h3>
+                            {/* <Image src={malik} alt='Musa Malik' height={50} width={240} /> */}
                         </div>
                         <div className="flex justify-evenly md:justify-end items-center my-auto mx-0">
-                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${about ? 'text-white' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/')}>
+                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${about ? 'text-black' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/')}>
                                 <Home />
                                 <p className=' ml-1 text-sm ' >About Me</p>
                             </div>
-                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${resume ? 'text-white' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/resume')}>
+                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${resume ? 'text-black' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/resume')}>
                                 <Album />
                                 <p className='ml-1 text-sm ' >Resume</p>
                             </div>
@@ -67,8 +70,8 @@ const Navbar = () => {
                             <p className='hidden md:inline-flex ml-4 hover:animate-bounce text-sm text-gray-400 hover:text-[#00C1D4] cursor-pointer'>Contact</p> */}
                             <div onClick={() => dispatch(change())}
                                 className='flex md:hidden flex-col justify-between space-y-2 cursor-pointer hover:text-gray-300 '>
-                                <div className={`h-0.5 w-8 transition duration-500 ease-in-out ${click ? 'rotate-45 transition duration-500 ease-in-out translate-y-2.5 bg-gray-400' : 'bg-white'}`} />
-                                <div className={`h-0.5 w-8 transition duration-500 ease-in-out ${click ? '-rotate-45 transition duration-500 ease-in-out bg-gray-400' : 'bg-white'}`} />
+                                <div className={`h-0.5 w-8 transition duration-500 ease-in-out ${click ? 'rotate-45 transition duration-500 ease-in-out translate-y-2.5 bg-gray-400' : 'bg-black'}`} />
+                                <div className={`h-0.5 w-8 transition duration-500 ease-in-out ${click ? '-rotate-45 transition duration-500 ease-in-out bg-gray-400' : 'bg-black'}`} />
                             </div>
                         </div>
                     </div>

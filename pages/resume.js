@@ -28,7 +28,7 @@ const Resume = () => {
   return (
     <div>
       <Navbar />
-      <div className="resume py-3 px-14 pt-20">
+      <div className="resume py-3 px-14 pt-20 bg-[#F5F5F5] text-black">
         <Header right="RESUME" left="1 Year of Experience" />
         <div className="middle grid md:grid-cols-2 justify-start">
           <div className="education">
