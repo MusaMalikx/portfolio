@@ -7,7 +7,6 @@ import { change, selectHamburger } from '../redux/slices/hamburger';
 import Logo from './Logo';
 import { useRouter } from 'next/router'
 import { selectAbout, selectContact, selectPortfolio, selectResume } from '../redux/slices/navbar';
-import malik from "../assets/m.png";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -57,14 +56,14 @@ const Navbar = () => {
                                 <Album />
                                 <p className='ml-1 text-sm ' >Resume</p>
                             </div>
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
+                            {/* <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
                                 <MovieCreation />
                                 <p className='ml-1 text-sm ' >Portfolio</p>
                             </div>
                             <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
                                 <AlternateEmail />
                                 <p className='ml-1 text-sm ' >Contact</p>
-                            </div>
+                            </div> */}
                             {/* <p className='hidden md:inline-flex ml-4 hover:animate-bounce text-sm text-gray-400 hover:text-[#00C1D4] cursor-pointer'>Resume</p>
                             <p className='hidden md:inline-flex ml-4 hover:animate-bounce text-sm text-gray-400 hover:text-[#00C1D4] cursor-pointer'>Portfolio</p>
                             <p className='hidden md:inline-flex ml-4 hover:animate-bounce text-sm text-gray-400 hover:text-[#00C1D4] cursor-pointer'>Contact</p> */}
@@ -92,14 +91,14 @@ const Navbar = () => {
                                             <Album />
                                             <a className='ml-2' href="#home" >RESUME</a>
                                         </div>
-                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
+                                        {/* <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
                                             <MovieCreation />
                                             <a className='ml-2' href="#home" >PORTFOLIO</a>
                                         </div>
                                         <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
                                             <AlternateEmail />
                                             <a className='ml-2' href="#home" >CONTACT</a>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </>
