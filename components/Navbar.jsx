@@ -33,6 +33,11 @@ const Navbar = () => {
         dispatch(change())
     }
 
+    const handlePortfolio = () => {
+        router.push('/portfolio')
+        dispatch(change())
+    }
+
     return (
         <>
             <div className={`text-white ${click ? 'bg-black' : 'bg-[#F7F6F2]'}  flex content-center fixed top-0 left-0 right-0 z-10`}>
@@ -56,11 +61,11 @@ const Navbar = () => {
                                 <Album />
                                 <p className='ml-1 text-sm ' >Resume</p>
                             </div>
-                            {/* <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
+                            <div className={`hidden md:inline-flex items-center hover:text-[#00C1D4] ${portfolio ? 'text-black' : 'text-gray-500'}  cursor-pointer hover:animate-bounce mr-4`} onClick={() => router.push('/portfolio')}>
                                 <MovieCreation />
                                 <p className='ml-1 text-sm ' >Portfolio</p>
                             </div>
-                            <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
+                            {/* <div className='hidden md:inline-flex items-center hover:text-[#00C1D4] text-gray-500 cursor-pointer hover:animate-bounce mr-4'>
                                 <AlternateEmail />
                                 <p className='ml-1 text-sm ' >Contact</p>
                             </div> */}
@@ -78,7 +83,7 @@ const Navbar = () => {
                     {
                         click && (
                             <>
-                                < div className='fixed top-24 p-10 right-0 bg-black h-screen z-20 justify-between text-center border-l-2 border-[#00C1D4]'
+                                < div className='fixed top-24 p-10 right-0 bg-black h-screen z-20 justify-between text-center border-l-2 border-[#00C1D4] transition-transform ease-linear'
                                     data-aos="fade-left"
                                     data-aos-duration="500"
                                 >
@@ -91,11 +96,11 @@ const Navbar = () => {
                                             <Album />
                                             <a className='ml-2' href="#home" >RESUME</a>
                                         </div>
-                                        {/* <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
+                                        <div className={`py-6 flex content-center ${portfolio && 'text-white'} hover:scale-125 transition ease-in-out duration-300`} onClick={handlePortfolio}>
                                             <MovieCreation />
                                             <a className='ml-2' href="#home" >PORTFOLIO</a>
                                         </div>
-                                        <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
+                                        {/* <div className='py-6 flex content-center hover:scale-125 transition ease-in-out duration-300 ' onClick={() => dispatch(change())}>
                                             <AlternateEmail />
                                             <a className='ml-2' href="#home" >CONTACT</a>
                                         </div> */}
